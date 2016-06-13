@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="select_device">选择设备</string>
+    <string name="discoverable">开放蓝牙</string>
+    <string name="newdevice">新设备</string>
+    <string name="paireddevice">已配对设备</string>
+    <string name="nomatcheddevices">没有配对的设备</string>
+    <string name="scanning">扫描中</string>
+    <string name="nonewdevices">没有发现新设备</string>
+    <string name="yilianjiezhi">已连接至：</string>
+    <string name="weilianjieshebei">未连接设备</string>
+    <string name="zhengzailianjie">正在连接</string>
+    <string name="scan">搜索设备</string>
+
+</resources>

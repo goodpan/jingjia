@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CircleProgress-master/CircleProgress-master.iml" filepath="$PROJECT_DIR$/CircleProgress-master/CircleProgress-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Countdown/Countdown.iml" filepath="$PROJECT_DIR$/Countdown/Countdown.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MaterialNavigationDrawer/MaterialNavigationDrawer.iml" filepath="$PROJECT_DIR$/MaterialNavigationDrawer/MaterialNavigationDrawer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RippleEffect/RippleEffect.iml" filepath="$PROJECT_DIR$/RippleEffect/RippleEffect.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ripple_Background/Ripple_Background.iml" filepath="$PROJECT_DIR$/Ripple_Background/Ripple_Background.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SlidingMenu/SlidingMenu.iml" filepath="$PROJECT_DIR$/SlidingMenu/SlidingMenu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WaveSwipeRefreshLayout/WaveSwipeRefreshLayout.iml" filepath="$PROJECT_DIR$/WaveSwipeRefreshLayout/WaveSwipeRefreshLayout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/community-material-typeface-library/community-material-typeface-library.iml" filepath="$PROJECT_DIR$/community-material-typeface-library/community-material-typeface-library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/devicon-typeface-library/devicon-typeface-library.iml" filepath="$PROJECT_DIR$/devicon-typeface-library/devicon-typeface-library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/entypo-typeface-library/entypo-typeface-library.iml" filepath="$PROJECT_DIR$/entypo-typeface-library/entypo-typeface-library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/foundation-icons-typeface-library/foundation-icons-typeface-library.iml" filepath="$PROJECT_DIR$/foundation-icons-typeface-library/foundation-icons-typeface-library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ionicons-typeface-library/ionicons-typeface-library.iml" filepath="$PROJECT_DIR$/ionicons-typeface-library/ionicons-typeface-library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jingjia.iml" filepath="$PROJECT_DIR$/jingjia.iml" />
+      <module fileurl="file://$PROJECT_DIR$/material-design-iconic-typeface-library/material-design-iconic-typeface-library.iml" filepath="$PROJECT_DIR$/material-design-iconic-typeface-library/material-design-iconic-typeface-library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/meteocons-typeface-library/meteocons-typeface-library.iml" filepath="$PROJECT_DIR$/meteocons-typeface-library/meteocons-typeface-library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/octicons-typeface-library/octicons-typeface-library.iml" filepath="$PROJECT_DIR$/octicons-typeface-library/octicons-typeface-library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pickerview/pickerview.iml" filepath="$PROJECT_DIR$/pickerview/pickerview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pinyinSearch/pinyinSearch.iml" filepath="$PROJECT_DIR$/pinyinSearch/pinyinSearch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/typeicons-typeface-library/typeicons-typeface-library.iml" filepath="$PROJECT_DIR$/typeicons-typeface-library/typeicons-typeface-library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/weather-icons-typeface-library/weather-icons-typeface-library.iml" filepath="$PROJECT_DIR$/weather-icons-typeface-library/weather-icons-typeface-library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xCLCharts/xCLCharts.iml" filepath="$PROJECT_DIR$/xCLCharts/xCLCharts.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xutils/xutils.iml" filepath="$PROJECT_DIR$/xutils/xutils.iml" />
+    </modules>
+  </component>
+</project>

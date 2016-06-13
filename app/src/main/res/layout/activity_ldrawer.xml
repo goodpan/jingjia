@@ -1,0 +1,49 @@
+<android.support.v4.widget.DrawerLayout
+    android:id="@+id/drawer_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4876FF"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.shinelw.library.ColorArcProgressBar
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/bar2"
+            app:is_need_content="true"
+            app:front_color1="#FFF"
+            app:front_color2="#FFF"
+            app:front_color3="#FFF"
+            app:max_value="100"
+            app:back_width="2dp"
+            app:front_width="10dp"
+            app:total_engle="360"
+            app:is_need_unit="true"
+            app:string_unit="ppm"
+            app:is_need_title="true"
+            app:string_title="TDS值"
+            app:back_color="@android:color/darker_gray"
+            android:layout_marginTop="50dp"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+        <ListView
+            android:id="@+id/navdrawer"
+            android:layout_width="@dimen/navdrawer_width"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+            android:choiceMode="singleChoice"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0dp"
+            android:drawSelectorOnTop="false">
+        </ListView>
+
+</android.support.v4.widget.DrawerLayout>
+

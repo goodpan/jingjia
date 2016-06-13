@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.xmfcdz.jingjia">
+
+    <uses-sdk
+        android:minSdkVersion="18"
+        android:targetSdkVersion="23" />
+    <!-- 蓝牙权限 -->
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <!-- 网络权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 用于访问网络，网络定位需要上网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 写入扩展存储，向扩展卡写入数据，用于写入缓存定位数据 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <!-- 百度地图权限 -->
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        tools:replace="android:icon">
+
+        <!-- 高德地图key -->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="9471f19c0c6ff59a6159c54b58f414f7" />
+        <!-- 高德地图定位 -->
+        <service android:name="com.amap.api.location.APSService" />
+        <!-- 百度地图key -->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="8eguWpWMXnOGubgOsyZanMflGXcvDMUA" />
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+        <!-- 闪屏页 -->
+        <activity
+            android:name=".SplashActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".GuideActivity" />
+        <activity android:name=".LDrawerActivity" />
+        <!-- 蓝牙搜索 -->
+        <activity
+            android:name=".AddDevicesActivity"
+            android:parentActivityName=".LDrawerActivity"
+            android:theme="@style/CustomTheme" />
+        <!-- 柱状图 -->
+        <activity
+            android:name=".BarChartActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/CustomTheme" />
+        <!-- 折线图 -->
+        <activity
+            android:name=".LineChartActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/CustomTheme" />
+        <activity
+            android:name=".MainDrawerActivity"
+            android:theme="@style/MultiPane" />
+        <!-- 主界面 -->
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/CustomTheme" />
+        <!-- 蓝牙 -->
+        <activity
+            android:name=".bluetooth.ScanBTDeviceActivity"
+            android:label="@string/select_device"
+            android:theme="@android:style/Theme.Dialog" />
+
+        <!-- 我的好友 -->
+        <activity
+            android:name="com.xmfcdz.friends.FriendsListActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/horizontal_slide" />
+        <!-- 设置 -->
+        <activity
+            android:name=".SetUpActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/horizontal_slide" />
+        <!-- 登录 -->
+        <activity
+            android:name=".LoginActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/horizontal_slide" />
+        <!-- 注册 -->
+        <activity
+            android:name=".RegisterActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/horizontal_slide" />
+        <!-- 个人信息 -->
+        <activity
+            android:name=".MyinfoActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/horizontal_slide" />
+        <!-- 编辑昵称 -->
+        <activity
+            android:name=".UpdateNickActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/horizontal_slide" />
+        <activity
+            android:name=".TestActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <!-- tds详细 -->
+        <activity
+            android:name=".DetailedActivity"
+            android:theme="@style/horizontal_slide" />
+        <!-- 百度地图 -->
+        <activity
+            android:name=".BaiduMapActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/horizontal_slide" />
+        <!-- 城市列表 -->
+        <activity
+            android:name="com.xmfcdz.citilist.CityList"
+            android:parentActivityName=".BaiduMapActivity"
+            android:theme="@style/horizontal_slide" />
+        <!-- 城市搜索 -->
+        <activity
+            android:name="com.xmfcdz.citilist.searchactivity"
+            android:parentActivityName=".BaiduMapActivity"
+            android:theme="@style/horizontal_slide" />
+        <!-- 蓝牙扫描 -->
+        <activity
+            android:name=".DeviceScanActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light" />
+        <!-- 设备 -->
+        <activity
+            android:name=".DeviceControlActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light" />
+
+        <service
+            android:name=".BluetoothLeService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".MarkActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/horizontal_slide" />
+        <!-- 滤芯管理 -->
+        <activity
+            android:name=".LvXinActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/CustomTheme" />
+        <!-- 倒计时 -->
+        <activity
+            android:name=".StartCountdownActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/horizontal_slide" />
+        <!-- 最新数据 -->
+        <activity android:name=".ResultsActivity"/>
+    </application>
+
+</manifest>

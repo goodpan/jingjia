@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="D:\jingjia\google-material-typeface-library\src\main\assets"><file name="fonts/google-material-font-v2.2.0.1.original.ttf" path="D:\jingjia\google-material-typeface-library\src\main\assets\fonts\google-material-font-v2.2.0.1.original.ttf"/></source></dataSet><dataSet config="release"><source path="D:\jingjia\google-material-typeface-library\src\release\assets"/></dataSet></merger>
