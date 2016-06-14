@@ -75,7 +75,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".GuideActivity" />
-        <activity android:name=".LDrawerActivity" />
         <!-- 蓝牙搜索 -->
         <activity
             android:name=".AddDevicesActivity"
@@ -91,9 +90,6 @@
             android:name=".LineChartActivity"
             android:parentActivityName=".MainActivity"
             android:theme="@style/CustomTheme" />
-        <activity
-            android:name=".MainDrawerActivity"
-            android:theme="@style/MultiPane" />
         <!-- 主界面 -->
         <activity
             android:name=".MainActivity"

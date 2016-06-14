@@ -1,13 +1,11 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
-
 android {
-    compileSdkVersion setup.compileSdk
-    buildToolsVersion setup.buildTools
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
 
     defaultConfig {
-        minSdkVersion setup.minSdk
-        targetSdkVersion setup.targetSdk
+        minSdkVersion 18
+        targetSdkVersion 23
         versionCode 530
         versionName '5.3.0'
     }
@@ -24,14 +22,12 @@ android {
     }
 }
 
-apply from: 'gradle-mvn-push.gradle'
-apply from: 'gradle-jcenter-push.gradle'
 
 dependencies {
-    compile "com.android.support:appcompat-v7:${versions.supportLib}"
-    compile "com.android.support:recyclerview-v7:${versions.supportLib}"
-    compile "com.android.support:support-annotations:${versions.supportLib}"
-    compile "com.android.support:design:${versions.supportLib}"
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:recyclerview-v7:23.4.0'
+    compile "com.android.support:support-annotations:23.4.0"
+    compile 'com.android.support:design:23.4.0'
 
     // used to base on some backwards compatible themes
     // contains util classes to support various android versions, and clean up code

@@ -10,12 +10,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/CircleProgress-master" />
             <option value="$PROJECT_DIR$/Countdown" />
-            <option value="$PROJECT_DIR$/MaterialNavigationDrawer" />
-            <option value="$PROJECT_DIR$/RippleEffect" />
+            <option value="$PROJECT_DIR$/MaterialDrawer" />
             <option value="$PROJECT_DIR$/Ripple_Background" />
-            <option value="$PROJECT_DIR$/SlidingMenu" />
             <option value="$PROJECT_DIR$/WaveSwipeRefreshLayout" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/community-material-typeface-library" />
