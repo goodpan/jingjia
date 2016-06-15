@@ -3,16 +3,13 @@ package com.xmfcdz.jingjia;
 
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.db.chart.Tools;
-import com.db.chart.model.BarSet;
 import com.db.chart.model.LineSet;
 import com.db.chart.view.BarChartView;
-import com.db.chart.view.ChartView;
 import com.db.chart.view.LineChartView;
 
 
@@ -66,5 +63,6 @@ public class LineChartActivity extends AppCompatActivity {
         chart.setAxisColor(Color.parseColor("#47c0fc"));
         chart.show();
     }
+
 
 }

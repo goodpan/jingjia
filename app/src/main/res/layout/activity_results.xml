@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#17A2F7" >
+    android:background="#17A2F7"
+    android:orientation="vertical">
 
     <RelativeLayout
         android:id="@+id/title"
@@ -36,6 +37,14 @@
             android:textColor="#ffffff"
             android:textSize="18sp" />
     </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+    </android.support.v4.view.ViewPager>
 
     <LinearLayout
         android:id="@+id/main_bottom"
@@ -176,11 +185,5 @@
         android:layout_above="@id/main_bottom"
         android:background="#d6d6d6" />
 
-    <RelativeLayout
-        android:id="@+id/fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/view_temp"
-        android:layout_below="@id/title" />
 
-</RelativeLayout>
+</LinearLayout>

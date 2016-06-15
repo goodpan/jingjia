@@ -1,15 +1,20 @@
 package com.xmfcdz.jingjia;
 
 import android.net.Uri;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.os.Bundle;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import com.xmfcdz.adapter.FragmentAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ResultsActivity extends FragmentActivity
         implements NewDataFragment.OnFragmentInteractionListener,
@@ -33,14 +38,25 @@ public class ResultsActivity extends FragmentActivity
     private ImageView iv_add;
     private ImageView iv_search;
     private TextView res_title;
+
+    private ViewPager mViewPager;
+    private List<Fragment> mFragmentList = new ArrayList<Fragment>();
+    private FragmentPagerAdapter mAdapter;
+    private int currIndex;//当前页卡编号
+    private int bmpW;//横线图片宽度
+    private int offset;//图片移动的偏移量
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
         initView();
+        mAdapter = new FragmentAdapter(this.getSupportFragmentManager(),mFragmentList);
+        mViewPager.setAdapter(mAdapter);
+        mViewPager.addOnPageChangeListener(new MyOnPageChangeListener());//页面变化时的监听器
+
     }
     private void initView() {
-
+        mViewPager = (ViewPager) findViewById(R.id.fragment_container);
         newDataFragment = new NewDataFragment();
         aWeekTrendFragment = new AWeekTrendFragment();
         surroundingFragment = new SurroundingFragment();
@@ -60,18 +76,14 @@ public class ResultsActivity extends FragmentActivity
         textviews[2] = (TextView) findViewById(R.id.tv_find);
         textviews[3] = (TextView) findViewById(R.id.tv_profile);
         textviews[0].setTextColor(0xFF45C01A);
-        // 添加显示第一个fragment
-        getSupportFragmentManager().beginTransaction()
-                .add(R.id.fragment_container, newDataFragment)
-                .add(R.id.fragment_container, aWeekTrendFragment)
-                .add(R.id.fragment_container, cityRankingFragment)
-                .add(R.id.fragment_container, surroundingFragment)
-                .hide(aWeekTrendFragment).hide(cityRankingFragment)
-                .hide(surroundingFragment).show(newDataFragment).commit();
-
         //获取标题
         res_title = (TextView)findViewById(R.id.res_title);
+        mFragmentList.add(newDataFragment);
+        mFragmentList.add(aWeekTrendFragment);
+        mFragmentList.add(surroundingFragment);
+        mFragmentList.add(cityRankingFragment);
     }
+
     public void onTabClicked(View view) {
         switch (view.getId()) {
             case R.id.re_weixin:
@@ -107,6 +119,7 @@ public class ResultsActivity extends FragmentActivity
         textviews[currentTabIndex].setTextColor(0xFF999999);
         textviews[index].setTextColor(0xFF45C01A);
         currentTabIndex = index;
+        mViewPager.setCurrentItem(currentTabIndex);
     }
 
     @Override
@@ -117,5 +130,45 @@ public class ResultsActivity extends FragmentActivity
     //退出
     public void back(View view){
         finish();
+    }
+
+    public class MyOnPageChangeListener implements ViewPager.OnPageChangeListener {
+
+        @Override
+        public void onPageScrolled(int arg0, float arg1, int arg2) {
+            // TODO Auto-generated method stub
+
+        }
+
+        @Override
+        public void onPageScrollStateChanged(int arg0) {
+            // TODO Auto-generated method stub
+
+        }
+
+        @Override
+        public void onPageSelected(int position) {
+            swithTab(position);
+        }
+    }
+
+    private void swithTab(int position){
+
+        if (currentTabIndex != index) {
+            FragmentTransaction trx = getSupportFragmentManager()
+                    .beginTransaction();
+            trx.hide(fragments[currentTabIndex]);
+            if (!fragments[index].isAdded()) {
+                trx.add(R.id.fragment_container, fragments[index]);
+            }
+            trx.show(fragments[index]).commit();
+        }
+        imagebuttons[currentTabIndex].setSelected(false);
+        // 把当前tab设为选中状态
+        imagebuttons[index].setSelected(true);
+        textviews[currentTabIndex].setTextColor(0xFF999999);
+        textviews[index].setTextColor(0xFF45C01A);
+        currentTabIndex = index;
+        mViewPager.setCurrentItem(currentTabIndex);
     }
 }
