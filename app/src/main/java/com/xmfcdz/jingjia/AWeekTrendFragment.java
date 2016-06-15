@@ -34,7 +34,7 @@ public class AWeekTrendFragment extends Fragment {
     private String mParam1;
     private String mParam2;
     private BarChartView mChartOne;
-    private final String[] mLabels= {"星期一", "星期二", "星期三", "星期四", "星期五","星期六","星期日"};
+    private final String[] mLabels= {"周一", "周二", "周三", "周四", "周五","周六","周日"};
     private final float [][] mValues = {{950f, 750f, 550f, 450f, 100f,880f,501f}};
     private OnFragmentInteractionListener mListener;
     private boolean hidden;
@@ -72,6 +72,8 @@ public class AWeekTrendFragment extends Fragment {
         }
     }
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -83,13 +85,14 @@ public class AWeekTrendFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        // 防止被T后，没点确定按钮然后按了home键，长期在后台又进app导致的crash
-        if (savedInstanceState != null
-                && savedInstanceState.getBoolean("isConflict", false))
-            return;
-        mLineChart = (LineChartView)getView().findViewById(R.id.linechart_week);
-        produceLineChar(mLineChart);
+
     }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+    }
+
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
@@ -143,6 +146,7 @@ public class AWeekTrendFragment extends Fragment {
         if (!hidden) {
             refresh();
         }
+
     }
 
     // 刷新ui
@@ -151,7 +155,9 @@ public class AWeekTrendFragment extends Fragment {
             // 可能会在子线程中调到这方法
             getActivity().runOnUiThread(new Runnable() {
                 public void run() {
-
+                    mLineChart = (LineChartView)getView().findViewById(R.id.linechart_week);
+                    produceLineChar(mLineChart);
+                    mLineChart.invalidate();
                 }
             });
         } catch (Exception e) {
@@ -178,5 +184,6 @@ public class AWeekTrendFragment extends Fragment {
         chart.setFontSize(32);
         chart.setAxisColor(Color.parseColor("#47c0fc"));
         chart.show();
+        chart.invalidate();
     }
 }
