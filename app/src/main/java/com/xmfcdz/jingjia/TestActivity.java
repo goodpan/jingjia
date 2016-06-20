@@ -36,8 +36,10 @@ public class TestActivity extends BaseActivity {
         getSupportActionBar().setTitle("");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
+        //设置viewpage
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(mSectionsPagerAdapter);
+        //tabLayout与viepage绑定
         tabLayout.setupWithViewPager(mViewPager);
     }
 
@@ -97,9 +99,11 @@ public class TestActivity extends BaseActivity {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
+                    return "热门";
                 case 1:
+                    return "发现";
                 case 2:
-                    return "Image";
+                    return "推荐";
             }
             return null;
         }
