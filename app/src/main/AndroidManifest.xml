@@ -75,11 +75,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".GuideActivity" />
-        <!-- 蓝牙搜索 -->
-        <activity
-            android:name=".AddDevicesActivity"
-            android:parentActivityName=".LDrawerActivity"
-            android:theme="@style/CustomTheme" />
+
         <!-- 柱状图 -->
         <activity
             android:name=".BarChartActivity"
@@ -163,7 +159,7 @@
             android:name=".DeviceControlActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light" />
-
+        <!-- 蓝牙服务 -->
         <service
             android:name=".BluetoothLeService"
             android:enabled="true"

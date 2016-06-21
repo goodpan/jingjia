@@ -1,7 +1,5 @@
 package com.xmfcdz.jingjia;
 
-import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothGattCharacteristic;
@@ -14,7 +12,6 @@ import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Handler;
 import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -41,7 +38,6 @@ import com.amap.api.services.weather.LocalWeatherLiveResult;
 import com.amap.api.services.weather.WeatherSearch;
 import com.amap.api.services.weather.WeatherSearchQuery;
 import com.andexert.library.RippleView;
-//import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
@@ -55,7 +51,6 @@ import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.mikepenz.materialdrawer.model.interfaces.Nameable;
 import com.xmfcdz.friends.FriendsListActivity;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -254,11 +249,7 @@ public class MainActivity extends AppCompatActivity
         windPowerView = (TextView)findViewById(R.id.windPower);
         //获取天气控件
         windDirectionView = (TextView)findViewById(R.id.windDirection);
-        //获取蓝牙设备
-        //btAdapter = BluetoothAdapter.getDefaultAdapter();
 
-
-        //
         rippleView = (RippleView) findViewById(R.id.rippleView);
         rippleView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -267,7 +258,7 @@ public class MainActivity extends AppCompatActivity
                 Log.e("Sample", "Click Rect !");
             }
         });
-
+        //检测报告
         btToDetail = (Button)findViewById(R.id.btToDetail);
         btToDetail.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -282,17 +273,6 @@ public class MainActivity extends AppCompatActivity
                 openImagesFragment();
             }
         });
-
-
-        //蓝牙相关
-
-        //获取设备名、地址
-//        final Intent intent = getIntent();
-//        mDeviceName = intent.getStringExtra(EXTRAS_DEVICE_NAME);
-//        mDeviceAddress = intent.getStringExtra(EXTRAS_DEVICE_ADDRESS);
-//        //绑定BluetoothLeService
-//        Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
-//        bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
     }
     @Override
     protected void onDestroy() {
@@ -311,20 +291,7 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-//    //    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        //handle the click on the back arrow click
-//        switch (item.getItemId()) {
-//            case android.R.id.home:
-//                onBackPressed();
-//                return true;
-//
-//            default:
-//                return super.onOptionsItemSelected(item);
-//        }
-//    }
-
-    //    @Override
+   @Override
     public void onBackPressed() {
         //handle the back press :D close the drawer first and if the drawer is closed close the activity
         if (drawerLeft != null && drawerLeft.isDrawerOpen()) {
@@ -572,7 +539,6 @@ public class MainActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main, menu);
-
         return true;
     }
 
@@ -606,14 +572,13 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(MainActivity.this,MarkActivity.class);
         startActivity(intent);
     }
-    //网络图片
+    //推荐方案
     private void openImagesFragment(){
         Intent intent = new Intent(MainActivity.this,TestActivity.class);
         startActivity(intent);
     }
-
+    //检测报告
     private void openDetailedActivity(){
-//        Intent intent = new Intent(MainActivity.this,DetailedActivity.class);
         Intent intent = new Intent(MainActivity.this,ResultsActivity.class);
         startActivity(intent);
     }
@@ -637,7 +602,6 @@ public class MainActivity extends AppCompatActivity
     //蓝牙操作
     private void toControlDevice(){
         Intent intent = new Intent(MainActivity.this, DeviceScanActivity.class);
-//        startActivity(intent);
         startActivityForResult(intent, REQUEST_CODE);
     }
 
@@ -658,13 +622,11 @@ public class MainActivity extends AppCompatActivity
         startActivity(intent);
     }
 
-
-    //启动高德地图
+    //启动百度地图
     public void openBaiduMap(View view) {
         Intent intent = new Intent(MainActivity.this,BaiduMapActivity.class);
         startActivity(intent);
     }
-    //设置menu背景色
 
     //打开右侧抽屉
     public void  openDrawerRight(View view){
@@ -685,7 +647,6 @@ public class MainActivity extends AppCompatActivity
     }
     //启动蓝牙测试
     public void StartMeasuring(View view){
-//        addDevices();
         toControlDevice();
     }
 
@@ -729,7 +690,6 @@ public class MainActivity extends AppCompatActivity
                     //绑定BluetoothLeService
                     Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
                     bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
-
                 }
                 break;
             default:
@@ -893,7 +853,6 @@ public class MainActivity extends AppCompatActivity
             listItems.add(listItem);
         }
         //创建一个一个SimpleAdapter
-//        mHeaderView =  this.getLayoutInflater().inflate(R.layout.simple_item, null, false);
         simpleAdapter = new SimpleAdapter(this,listItems,R.layout.simple_item,
                 new  String[]{"header","title","desc"},
                 new int[]{R.id.header,R.id.title,R.id.desc});
