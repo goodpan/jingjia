@@ -14,39 +14,27 @@
         app:showAsAction="never"
         android:background="#47c0fc"/>
     <item
-        android:id="@+id/menu_3"
+        android:id="@+id/menu_scan"
         android:orderInCategory="3"
         android:title="打开蓝牙"
         app:showAsAction="never"
         android:background="#47c0fc"/>
     <item
-        android:id="@+id/menu_4"
+        android:id="@+id/menu_stop"
         android:orderInCategory="4"
         android:title="关闭蓝牙"
         app:showAsAction="never"
         android:background="#47c0fc"/>
     <item
-        android:id="@+id/menu_5"
-        android:orderInCategory="5"
-        android:title="设置"
+        android:id="@+id/menu_refresh"
+        android:orderInCategory="4"
+        android:title="刷新"
         app:showAsAction="never"
         android:background="#47c0fc"/>
-    <!--<item-->
-        <!--android:id="@+id/action_settings"-->
-        <!--android:orderInCategory="100"-->
-        <!--android:title="@string/action_settings"-->
-        <!--app:showAsAction="ifRoom" />-->
-
-    <item android:id="@+id/menu_refresh"
-        android:checkable="false"
-        android:orderInCategory="1"
-        android:showAsAction="ifRoom"/>
-    <item android:id="@+id/menu_scan"
-        android:title="@string/menu_scan"
-        android:orderInCategory="100"
-        android:showAsAction="ifRoom|withText"/>
-    <item android:id="@+id/menu_stop"
-        android:title="@string/menu_stop"
-        android:orderInCategory="101"
-        android:showAsAction="ifRoom|withText"/>
+    <item
+        android:id="@+id/menu_5"
+        android:orderInCategory="5"
+        android:title="退出登录"
+        app:showAsAction="never"
+        android:background="#47c0fc"/>
 </menu>

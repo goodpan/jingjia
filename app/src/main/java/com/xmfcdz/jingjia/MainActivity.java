@@ -552,12 +552,12 @@ public class MainActivity extends AppCompatActivity
             case R.id.menu_2:
                 Register();
                 return true;
-            case R.id.menu_3:
+            case R.id.menu_scan:
                 //show the hamburger icon
                 getSupportActionBar().setDisplayHomeAsUpEnabled(false);
                 drawerLeft.getActionBarDrawerToggle().setDrawerIndicatorEnabled(true);
                 return true;
-            case R.id.menu_4:
+            case R.id.menu_stop:
                 closeBluetooth();
                 return true;
             case R.id.menu_5:
